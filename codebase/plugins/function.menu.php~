@@ -1,0 +1,29 @@
+<?php
+/*
+ * Smarty plugin
+ * -------------------------------------------------------------
+ * File:     function.bucket.php
+ * Type:     function
+ * Name:     eightball
+ * Purpose:  outputs a random magic answer
+ * -------------------------------------------------------------
+ */
+function smarty_function_menu($params, &$smarty)
+{
+	$menu_html = '<ul>';
+	
+	$menu = array(
+		'Home'=>'/',
+		'About'=>'/about'
+	);
+	
+	foreach($menu as $title=>$url)
+	{
+		$menu_html .= '<li><a href="' . $url . '" title="' . $title . '">' . $title . '</a></li>' . "\n";
+	}
+	
+	$menu_html .= '</ul>';
+	
+	return $menu_html;
+}
+?>

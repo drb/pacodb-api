@@ -1,0 +1,10 @@
+RewriteEngine On
+
+Options -Indexes
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+# API handler
+RewriteRule ^(/)?$ handlers/bootstrap\.php [L]
+RewriteRule ^rest/([0-9\.]+)(/)?(.*)$ handlers/bootstrap\.php\?endpoint=$1 [L,QSA]
